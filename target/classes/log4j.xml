@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- Appenders 控制台日志 -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{yyyy/MM/dd HH:mm:ss.sss} [%t] [%-5p] %c - %m%n"/>
+		</layout>
+	</appender>
+	
+	<!-- Application Loggers -->
+	<!-- 记录该包下所有日志 -->
+	<logger name="com.jp" additivity="false">
+		<appender-ref ref="stdout"/>
+	</logger>
+	
+    <root>       
+        <priority value ="INFO"/>
+        	<appender-ref ref="stdout"/>
+    </root>    
+</log4j:configuration>
